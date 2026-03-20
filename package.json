@@ -1,0 +1,24 @@
+{
+  "name": "@flatina/browser-ctl",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "description": "CDP browser automation with accessibility-tree refs (@e1, @e2, …)",
+  "exports": {
+    ".": "./src/index.ts",
+    "./cdp": "./src/cdp.ts",
+    "./browser": "./src/browser.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src/",
+    "lint:fix": "biome check --write src/",
+    "check": "tsc --noEmit && biome check src/"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.8",
+    "@types/bun": "latest",
+    "typescript": "^5.9.3"
+  }
+}
