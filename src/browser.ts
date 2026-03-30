@@ -1,5 +1,5 @@
 import type { CDPClient } from "./cdp";
-import { sleep } from "./cdp";
+import { sleep } from "./internal";
 import { captureScreenshot, clickAt, dblClickAt, hoverAt, insertText, pressKey } from "./input";
 import {
   boxCenter,
