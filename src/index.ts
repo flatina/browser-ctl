@@ -1,5 +1,5 @@
 export { Browser } from "./browser";
-export { CDPClient, discoverTargets, findTarget, sleep } from "./cdp";
+export { CDPClient, discoverTargets, findTarget } from "./cdp";
 export type {
   AXNode,
   BackendNodeId,

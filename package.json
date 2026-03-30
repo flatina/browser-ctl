@@ -1,24 +1,46 @@
 {
   "name": "@flatina/browser-ctl",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
-  "private": true,
   "license": "MIT",
   "description": "CDP browser automation with accessibility-tree refs (@e1, @e2, …)",
   "exports": {
-    ".": "./src/index.ts",
-    "./cdp": "./src/cdp.ts",
-    "./browser": "./src/browser.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "bun": "./src/index.ts"
+    },
+    "./cdp": {
+      "types": "./dist/cdp.d.ts",
+      "import": "./dist/cdp.js",
+      "bun": "./src/cdp.ts"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "import": "./dist/browser.js",
+      "bun": "./src/browser.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "!src/**/*.test.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
+    "build": "tsup",
     "typecheck": "tsc --noEmit",
     "lint": "biome check src/",
     "lint:fix": "biome check --write src/",
-    "check": "tsc --noEmit && biome check src/"
+    "check": "tsc --noEmit && biome check src/",
+    "prepublishOnly": "bun run build"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.8",
     "@types/bun": "latest",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }
 }

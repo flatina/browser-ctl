@@ -172,6 +172,3 @@ export function findTarget(targets: CDPTarget[], predicate: (t: CDPTarget) => bo
   return targets.find((t) => t.type === "page" && predicate(t));
 }
 
-export function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
-}
