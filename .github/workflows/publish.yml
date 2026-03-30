@@ -20,7 +20,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}" > .npmrc
           npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMJSCOM_TOKEN1 }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN2 }}
 
       - run: |
           echo "//npm.pkg.github.com/:_authToken=\${NODE_AUTH_TOKEN}" > .npmrc
